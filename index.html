@@ -88,7 +88,7 @@
                                     <td>％</td>
                                     <td>-</td>
                                     <td><input name="ans1" type="text" dir="rtl" value="0" tabindex="5"
-                                            title="コットン（綿）のWF量" /></td>
+                                            title="コットン（綿）のWF量" readonly /></td>
                                 </tr>
                                 <tr>
                                     <td>&nbsp;</td>
@@ -100,7 +100,7 @@
                                     <td>％</td>
                                     <td>-</td>
                                     <td><input name="ans2" type="text" dir="rtl" value="0" tabindex="5"
-                                            title="羊毛のWF量" />
+                                            title="羊毛のWF量" readonly />
                                     </td>
                                 </tr>
                                 <tr>
@@ -112,7 +112,7 @@
                                     </td>
                                     <td>％</td>
                                     <td>-</td>
-                                    <td><input name="ans3" type="text" dir="rtl" value="0" tabindex="5" title="絹のWF量" />
+                                    <td><input name="ans3" type="text" dir="rtl" value="0" tabindex="5" title="絹のWF量" readonly />
                                     </td>
                                 </tr>
                                 <tr>
@@ -125,7 +125,7 @@
                                     <td>％</td>
                                     <td>-</td>
                                     <td><input name="ans4" type="text" dir="rtl" value="0" tabindex="5"
-                                            title="人造・合成繊維のWF量" /></td>
+                                            title="人造・合成繊維のWF量" readonly /></td>
                                 </tr>
                                 <tr>
                                     <td colspan="7" class="em">Tシャツ（長袖，230g）</td>
@@ -140,7 +140,7 @@
                                     <td>％</td>
                                     <td>-</td>
                                     <td><input name="ans5" type="text" dir="rtl" value="0" tabindex="5"
-                                            title="コットン（綿）のWF量" /></td>
+                                            title="コットン（綿）のWF量" readonly /></td>
                                 </tr>
                                 <tr>
                                     <td>&nbsp;</td>
@@ -152,7 +152,7 @@
                                     <td>％</td>
                                     <td>-</td>
                                     <td><input name="ans100" type="text" dir="rtl" value="0" tabindex="5"
-                                            title="羊毛のWF量" />
+                                        title="羊毛のWF量" readonly />
                                     </td>
                                 </tr>
                                 <tr>
@@ -164,7 +164,7 @@
                                     </td>
                                     <td>％</td>
                                     <td>-</td>
-                                    <td><input name="ans6" type="text" dir="rtl" value="0" tabindex="5" title="絹のWF量" />
+                                    <td><input name="ans6" type="text" dir="rtl" value="0" tabindex="5" title="絹のWF量" readonly />
                                     </td>
                                 </tr>
                                 <tr>
@@ -173,11 +173,11 @@
                                     <td>47</td>
                                     <td><input name="hinmoku7" type="text" dir="rtl" onkeyup="calc7()"
                                             onmouseup="calc7()" value="0" maxlength="10" tabindex="5"
-                                            title="人造・合成繊維の量" /></td>
+                                            title="人造・合成繊維の量"  /></td>
                                     <td>％</td>
                                     <td>ｰ</td>
                                     <td><input name="ans7" type="text" dir="rtl" value="0" tabindex="5"
-                                            title="人造・合成繊維のWF量" /></td>
+                                            title="人造・合成繊維のWF量" readonly /></td>
                                 </tr>
 
                             </table>
@@ -189,7 +189,7 @@
                             <table summary="WF量合計" class="common_table">
                                 <tr>
                                     <th>WF量合計<input name="goukei" type="text" dir="rtl" value="0" class="aki"
-                                            tabindex="5" title="WF量合計" />(L)<input type="button" value="計算する"
+                                            tabindex="5" title="WF量合計" readonly />(L)<input type="button" value="計算する"
                                             onclick="totalwf()" onkeypress="totalwf()" class="aki" tabindex="5" />
                                     </th>
                                 </tr>
@@ -206,27 +206,27 @@
         </div><!-- /wrap -->
     </div>
     <script>
-        function calc1() { total = 0; total = 13960 * document.form1.hinmoku1.value / 1000; document.form1.ans1.value = total; }
-        function calc2() { total = 0; total = 4291 * document.form1.hinmoku2.value / 1000; document.form1.ans2.value = total; }
-        function calc3() { total = 0; total = 8300 * document.form1.hinmoku3.value / 1000; document.form1.ans3.value = total; }
-        function calc4() { total = 0; total = 66 * document.form1.hinmoku4.value / 1000; document.form1.ans4.value = total; }
-        function calc5() { total = 0; total = 22926 * document.form1.hinmoku5.value / 1000; document.form1.ans5.value = total; }
-        function calc6() { total = 0; total = 13637 * document.form1.hinmoku6.value / 1000; document.form1.ans6.value = total; }
-        function calc7() { total = 0; total = 108 * document.form1.hinmoku7.value / 1000; document.form1.ans7.value = total; }
-
-
-        function calc100() { total = 0; total = 7046 * document.form1.hinmoku100.value / 1000; document.form1.ans100.value = total; }
-
-        
         //文字列を数字にする
         function stringToNum(x)
         {
-            if(Number(x)===NaN)
+            if(isNaN(Number(x)))
             {
                 return 0;
             }
             return Number(x);
         }
+
+        function calc1() { total = 0; total = 13960 *   stringToNum(document.form1.hinmoku1.value) / 1000; document.form1.ans1.value = total; }
+        function calc2() { total = 0; total = 4291 *    stringToNum(document.form1.hinmoku2.value) / 1000; document.form1.ans2.value = total; }
+        function calc3() { total = 0; total = 8300 *    stringToNum(document.form1.hinmoku3.value) / 1000; document.form1.ans3.value = total; }
+        function calc4() { total = 0; total = 66 *      stringToNum(document.form1.hinmoku4.value) / 1000; document.form1.ans4.value = total; }
+        function calc5() { total = 0; total = 22926 *   stringToNum(document.form1.hinmoku5.value) / 1000; document.form1.ans5.value = total; }
+        function calc6() { total = 0; total = 13637 *   stringToNum(document.form1.hinmoku6.value) / 1000; document.form1.ans6.value = total; }
+        function calc7() { total = 0; total = 108 *     stringToNum(document.form1.hinmoku7.value) / 1000; document.form1.ans7.value = total; }
+
+
+        function calc100() { total = 0; total = 7046 * document.form1.hinmoku100.value / 1000; document.form1.ans100.value = total; }
+
 
         function totalwf() {
             document.form1.goukei.value =
