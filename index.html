@@ -1,247 +1,184 @@
-<!DOCTYPE html>
-<html lang="ja">
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>water_仮想水計算機</title>
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <meta http-equiv="Content-Script-Type" content="text/javascript" />
-    <style>
-        #content #main .common_table {
-            width: 100%;
-            margin: 0 0 15px;
-        }
-
-        #content #main .common_table th {
-            font-size: 1.2em;
-            line-height: 1;
-            padding: 5px 5px;
-            text-align: center;
-            background: #def6ff;
-            white-space: nowrap
-        }
-
-        #content #main .common_table td {
-            font-size: 1.2em;
-            line-height: 1;
-            padding: 3px;
-        }
-
-        #content #main .common_table td.em {
-            font-weight: bold;
-            color: #004ecc;
-            padding-top: 10px;
-            border-bottom: 1px dotted #666666;
-        }
-
-        #content #main .common_table .aki {
-            margin: 5px;
-        }
-    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>water_仮想水計算機</title>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<style>
+#content #main .common_table{ width:100%; margin:0 0 15px;}
+#content #main .common_table th{ font-size:1.2em; line-height:1; padding:5px 5px; text-align:center; background:#def6ff; white-space:nowrap}
+#content #main .common_table td{ font-size:1.2em; line-height:1; padding:3px;}
+#content #main .common_table td.em{ font-weight:bold; color:#004ecc; padding-top:10px; border-bottom:1px dotted #666666;}
+#content #main .common_table .aki{ margin:5px;}
+</style>
+<script src="cal.js" type="text/javascript"></script>
 </head>
-
 <body>
-    <div id="header">
-    </div><!-- /header -->
-    <div id="content" class="clearfix">
-        <div id="wrap">
-            <div id="topic_path">
-                <ul>
-                </ul>
-            </div><!-- /topic_path -->
-            <div id="main">
-                <h1><span>ウォーターフットプリント計算機</span></h1>
-                <h2><span>ウォーターフットプリント量自動計算</span></h2>
-                <div class="qa_box">
-                    <p>ご利用方法：半角数字を"生地の割合を入れて下さい"のところの入力フォームに入力するとウォーターフットプリント量が表示されます。<br />
-                        ※このページを作るにあたり環境省のページを参考にさせてもらっております。<br />
-                        ※自動計算をするにあたりJavaScriptを利用しております。ブラウザーのJavaScript機能がOFFに設定されていたりブラウザーが未対応の場合はご利用できません。</p>
+</div><!-- /header -->
+<div id="content" class="clearfix">
+<div class="topic_path">
+<div id="wrap">
+<ul>
+</ul>
+</div><!-- /topic_path -->
+<div id="main">
+<h1><span>ウォーターフットプリント計算機</span></h1>
+<h2><span>ウォーターフットプリント量自動計算</span></h2>
+<div class="qa_box">
+<p>ご利用方法：半角数字を"生地の割合を入れて下さい"のところの入力フォームに入力するとウォーターフットプリント量が表示されます。<br />
+※このページを作るにあたり環境省のページを参考にさせてもらっております。<br />
+※自動計算をするにあたりJavaScriptを利用しております。ブラウザーのJavaScript機能がOFFに設定されていたりブラウザーが未対応の場合はご利用できません。</p>
 
-                    <form name="form1" id="form1" action="/hghg/">
-                        <div>
-                            <table summary="バーチャルウォーター量自動計算" class="common_table">
-                                <col width="100" />
-                                <col width="300" />
-                                <col width="70" />
-                                <col width="50" />
-                                <col width="70" />
-                                <col width="70" />
-                                <col width="50" />
-                                <tr>
-                                    <th>大分類</th>
-                                    <th>小分類</th>
-                                    <th>VW基準値<br />（m&sup3;/t）</th>
-                                    <th>生地の割合を入れて下さい</th>
-                                    <th>単位</th>
-                                    <th>単位あたり<br />の重量 (g)</th>
-                                    <th>WF量（L）※自動計算</th>
-                                </tr>
-                                <tr>
-                                    <td colspan="7" class="em">Tシャツ（半袖,140g）</td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                    <td>コットン（綿）</td>
-                                    <td>9,968</td>
-                                    <td><input name="hinmoku1" type="text" dir="rtl" onkeyup="calc1()"
-                                            onmouseup="calc1()" value="0" maxlength="10" tabindex="5"
-                                            title="コットン（綿）の量" /></td>
-                                    <td>％</td>
-                                    <td>-</td>
-                                    <td><input name="ans1" type="text" dir="rtl" value="0" tabindex="5"
-                                            title="コットン（綿）のWF量" /></td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                    <td>羊毛</td>
-                                    <td>3,065</td>
-                                    <td><input name="hinmoku2" type="text" dir="rtl" onkeyup="calc2()"
-                                            onmouseup="calc2()" value="0" maxlength="10" tabindex="5" title="羊毛の量" />
-                                    </td>
-                                    <td>％</td>
-                                    <td>-</td>
-                                    <td><input name="ans2" type="text" dir="rtl" value="0" tabindex="5"
-                                            title="羊毛のWF量" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                    <td>絹</td>
-                                    <td>5,929</td>
-                                    <td><input name="hinmoku3" type="text" dir="rtl" onkeyup="calc3()"
-                                            onmouseup="calc3()" value="0" maxlength="10" tabindex="5" title="絹の量" />
-                                    </td>
-                                    <td>％</td>
-                                    <td>-</td>
-                                    <td><input name="ans3" type="text" dir="rtl" value="0" tabindex="5" title="絹のWF量" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                    <td>人造・合成繊維</td>
-                                    <td>47</td>
-                                    <td><input name="hinmoku4" type="text" dir="rtl" onkeyup="calc4()"
-                                            onmouseup="calc4()" value="0" maxlength="10" tabindex="5"
-                                            title="人造・合成繊維の量" /></td>
-                                    <td>％</td>
-                                    <td>-</td>
-                                    <td><input name="ans4" type="text" dir="rtl" value="0" tabindex="5"
-                                            title="人造・合成繊維のWF量" /></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="7" class="em">Tシャツ（長袖，230g）</td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                    <td>コットン（綿）</td>
-                                    <td>9,968</td>
-                                    <td><input name="hinmoku5" type="text" dir="rtl" onkeyup="calc5()"
-                                            onmouseup="calc5()" value="0" maxlength="10" tabindex="5"
-                                            title="コットン（綿）の量" /></td>
-                                    <td>％</td>
-                                    <td>-</td>
-                                    <td><input name="ans5" type="text" dir="rtl" value="0" tabindex="5"
-                                            title="コットン（綿）のWF量" /></td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                    <td>羊毛</td>
-                                    <td>3,065</td>
-                                    <td><input name="hinmoku100" type="text" dir="rtl" onkeyup="calc100()"
-                                            onmouseup="calc100()" value="0" maxlength="10" tabindex="5" title="羊毛の量" />
-                                    </td>
-                                    <td>％</td>
-                                    <td>-</td>
-                                    <td><input name="ans100" type="text" dir="rtl" value="0" tabindex="5"
-                                            title="羊毛のWF量" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                    <td>絹</td>
-                                    <td>5,929</td>
-                                    <td><input name="hinmoku6" type="text" dir="rtl" onkeyup="calc6()"
-                                            onmouseup="calc6()" value="0" maxlength="10" tabindex="5" title="絹の量" />
-                                    </td>
-                                    <td>％</td>
-                                    <td>-</td>
-                                    <td><input name="ans6" type="text" dir="rtl" value="0" tabindex="5" title="絹のWF量" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                    <td>人造・合成繊維</td>
-                                    <td>47</td>
-                                    <td><input name="hinmoku7" type="text" dir="rtl" onkeyup="calc7()"
-                                            onmouseup="calc7()" value="0" maxlength="10" tabindex="5"
-                                            title="人造・合成繊維の量" /></td>
-                                    <td>％</td>
-                                    <td>ｰ</td>
-                                    <td><input name="ans7" type="text" dir="rtl" value="0" tabindex="5"
-                                            title="人造・合成繊維のWF量" /></td>
-                                </tr>
+<form name="form1" id="form1" action="/hghg/">
+<div>
+<table summary="バーチャルウォーター量自動計算" class="common_table">
+<col width="100" />
+<col width="300" />
+<col width="70" />
+<col width="50" />
+<col width="70" />
+<col width="70" />
+<col width="50" />
+<tr>
+<th>大分類</th>
+<th>小分類</th>
+<th>VW基準値<br />（m&sup3;/t）</th>
+<th>生地の割合を入れて下さい</th>
+<th>単位</th>
+<th>単位あたり<br />の重量  (g)</th>
+<th>WF量（L）※自動計算</th>
+</tr>
+<tr>
+<td colspan="7" class="em">Tシャツ（半袖,140g）</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>コットン（綿）</td>
+<td>9,968</td>
+<td><input name="hinmoku1" type="text" dir="rtl" onkeyup="calc1()" onmouseup="calc1()" value="0" maxlength="10" tabindex="5" title="コットン（綿）の量" /></td>
+<td>％</td>
+<td>-</td>
+<td><input name="ans1" type="text" dir="rtl" value="0" tabindex="5" title="コットン（綿）のWF量" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>羊毛</td>
+<td>3,065</td>
+<td><input name="hinmoku2" type="text" dir="rtl" onkeyup="calc2()" onmouseup="calc2()" value="0" maxlength="10" tabindex="5" title="羊毛の量" /></td>
+<td>％</td>
+<td>-</td>
+<td><input name="ans2" type="text" dir="rtl" value="0" tabindex="5" title="羊毛のWF量" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>絹</td>
+<td>5,929</td>
+<td><input name="hinmoku3" type="text" dir="rtl" onkeyup="calc3()" onmouseup="calc3()" value="0" maxlength="10" tabindex="5" title="絹の量" /></td>
+<td>％</td>
+<td>-</td>
+<td><input name="ans3" type="text" dir="rtl" value="0" tabindex="5" title="絹のWF量" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>人造・合成繊維</td>
+<td>47</td>
+<td><input name="hinmoku4" type="text" dir="rtl" onkeyup="calc4()" onmouseup="calc4()" value="0" maxlength="10" tabindex="5" title="人造・合成繊維の量" /></td>
+<td>％</td>
+<td>-</td>
+<td><input name="ans4" type="text" dir="rtl" value="0" tabindex="5" title="人造・合成繊維のWF量" /></td>
+</tr>
+<tr>
+<td colspan="7" class="em">Tシャツ（長袖，230g）</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>コットン（綿）</td>
+<td>9,968</td>
+<td><input name="hinmoku5" type="text" dir="rtl" onkeyup="calc5()" onmouseup="calc5()" value="0" maxlength="10" tabindex="5" title="コットン（綿）の量" /></td>
+<td>％</td>
+<td>-</td>
+<td><input name="ans5" type="text" dir="rtl" value="0" tabindex="5" title="コットン（綿）のWF量" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>羊毛</td>
+<td>3,065</td>
+<td><input name="hinmoku100" type="text" dir="rtl" onkeyup="calc100()" onmouseup="calc100()" value="0" maxlength="10" tabindex="5" title="羊毛の量" /></td>
+<td>％</td>
+<td>-</td>
+<td><input name="ans100" type="text" dir="rtl" value="0" tabindex="5" title="羊毛のWF量" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>絹</td>
+<td>5,929</td>
+<td><input name="hinmoku6" type="text" dir="rtl" onkeyup="calc6()" onmouseup="calc6()" value="0" maxlength="10" tabindex="5" title="絹の量" /></td>
+<td>％</td>
+<td>-</td>
+<td><input name="ans6" type="text" dir="rtl" value="0" tabindex="5" title="絹のWF量" /></td>
+</tr>
 
-                            </table>
-
-                            <p class="right"><input type="reset" value="すべて０に戻す" tabindex="5" title="リセット" /></p>
-                        </div>
-
-                        <div id="center_table" class="space_bottom">
-                            <table summary="WF量合計" class="common_table">
-                                <tr>
-                                    <th>WF量合計<input name="goukei" type="text" dir="rtl" value="0" class="aki"
-                                            tabindex="5" title="WF量合計" />(L)<input type="button" value="計算する"
-                                            onclick="totalwf()" onkeypress="totalwf()" class="aki" tabindex="5" />
-                                    </th>
-                                </tr>
-                            </table>
-                        </div>
-                    </form>
-                    <div class="totop"><a href="#wrap" tabindex="999">ページの先頭へ</a></div>
-                </div><!-- /content -->
-                <div id="footer">
-                    <div class="footer_menu">
-                    </div>
-                </div><!-- /footer -->
-            </div>
-        </div><!-- /wrap -->
-    </div>
-    <script>
-        function calc1() { total = 0; total = 13960 * document.form1.hinmoku1.value / 1000; document.form1.ans1.value = total; }
-        function calc2() { total = 0; total = 4291 * document.form1.hinmoku2.value / 1000; document.form1.ans2.value = total; }
-        function calc3() { total = 0; total = 8300 * document.form1.hinmoku3.value / 1000; document.form1.ans3.value = total; }
-        function calc4() { total = 0; total = 66 * document.form1.hinmoku4.value / 1000; document.form1.ans4.value = total; }
-        function calc5() { total = 0; total = 22926 * document.form1.hinmoku5.value / 1000; document.form1.ans5.value = total; }
-        function calc6() { total = 0; total = 13637 * document.form1.hinmoku6.value / 1000; document.form1.ans6.value = total; }
-        function calc7() { total = 0; total = 108 * document.form1.hinmoku7.value / 1000; document.form1.ans7.value = total; }
+<tr>
+<td>&nbsp;</td>
+<td>人造・合成繊維</td>
+<td>47</td>
+<td><input name="hinmoku7" type="text" dir="rtl" onkeyup="calc7()" onmouseup="calc7()" value="0" maxlength="10" tabindex="5" title="人造・合成繊維の量" /></td>
+<td>％</td>
+<td>ｰ</td>
+<td><input name="ans7" type="text" dir="rtl" value="0" tabindex="5" title="人造・合成繊維のWF量" /></td>
+</tr>
 
 
-        function calc100() { total = 0; total = 7046 * document.form1.hinmoku100.value / 1000; document.form1.ans100.value = total; }
+</table>
 
-        
-        //文字列を数字にする
-        function stringToNum(x)
-        {
-            if(Number(x)===NaN)
-            {
-                return 0;
-            }
-            return Number(x);
-        }
+<p class="right"><input type="reset" value="すべて０に戻す" tabindex="5" title="リセット" /></p>
+</div>
 
-        function totalwf() {
-            document.form1.goukei.value =
-                stringToNum(document.form1.ans1.value) +
-                stringToNum(document.form1.ans2.value) +
-                stringToNum(document.form1.ans3.value) +
-                stringToNum(document.form1.ans4.value) +
-                stringToNum(document.form1.ans5.value) +
-                stringToNum(document.form1.ans6.value) +
-                stringToNum(document.form1.ans7.value) +
-                stringToNum(document.form1.ans100.value)
-                ;
-        }
-
-    </script>
+<div id="center_table" class="space_bottom">
+<table summary="WF量合計" class="common_table">
+<tr>
+<th>WF量合計<input name="goukei" type="text" dir="rtl" value="0" class="aki"  tabindex="5" title="WF量合計" />(L)<input type="button" value="計算する" onclick="totalwf()" onkeypress="totalwf()" class="aki" tabindex="5" /></th>
+</tr>
+</table>
+</div>	  
+</form> 
+<div class="totop"><a href="#wrap" tabindex="999">ページの先頭へ</a></div>
+</div><!-- /content -->
+<div id="footer">
+<div class="footer_menu">
+</div>
+</div><!-- /footer -->
+</div><!-- /wrap -->
 </body>
+<script>
+function calc1(){	total=0;	total=	13960	*	document.form1.hinmoku1.value   /1000;	document.form1.ans1.value=total;	}			
+function calc2(){	total=0;	total=	4291	*	document.form1.hinmoku2.value	/1000;	document.form1.ans2.value=total;	}			
+function calc3(){	total=0;	total=	8300	*	document.form1.hinmoku3.value	/1000;	document.form1.ans3.value=total;	}			
+function calc4(){	total=0;	total=	66	*	document.form1.hinmoku4.value	/1000;	document.form1.ans4.value=total;	}
+function calc5(){	total=0;	total=	22926	*	document.form1.hinmoku5.value	/1000;	document.form1.ans5.value=total;	}
+function calc6(){	total=0;	total=	13637	*	document.form1.hinmoku6.value	/1000;	document.form1.ans6.value=total;	}
+function calc7(){	total=0;	total=	108	*	document.form1.hinmoku7.value	/1000;	document.form1.ans7.value=total;	}
+
+
+function calc100(){	total=0;	total=	7046	*	document.form1.hinmoku100.value   /1000;	document.form1.ans100.value=total;	}
+
+
+function totalwf(){document.form1.goukei.value=
+eval(document.form1.ans1.value)+
+eval(document.form1.ans2.value)+
+eval(document.form1.ans3.value)+
+eval(document.form1.ans4.value)+
+eval(document.form1.ans5.value)+
+eval(document.form1.ans6.value)+
+eval(document.form1.ans7.value)+
+eval(document.form1.ans100.value)
+
+
+
+;}
+
 
 </html>
