@@ -20,7 +20,7 @@ function calc100() { total = 0; total = 7046 * document.form1.hinmoku100.value /
 
 
 function totalwf() {
-    document.form1.goukei.value =
+    document.getElementById('goukei').textContect =
         stringToNum(document.form1.ans1.value) +
         stringToNum(document.form1.ans2.value) +
         stringToNum(document.form1.ans3.value) +
@@ -28,6 +28,7 @@ function totalwf() {
         stringToNum(document.form1.ans5.value) +
         stringToNum(document.form1.ans6.value) +
         stringToNum(document.form1.ans7.value) +
-        stringToNum(document.form1.ans100.value)
-        ;
+        stringToNum(document.form1.ans100.value);
+        var goukei= document.getElementById('goukei');
+        goukei.insertAdjacentHTML("beforeend","(L)");
 }
