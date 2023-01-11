@@ -20,7 +20,7 @@ function calc100() { total = 0; total = 7046 * document.form1.hinmoku100.value /
 
 
 function totalwf() {
-    document.getElementById('goukei').textContect =
+    document.getElementById('goukei').textContent =
         stringToNum(document.form1.ans1.value) +
         stringToNum(document.form1.ans2.value) +
         stringToNum(document.form1.ans3.value) +
