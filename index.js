@@ -31,4 +31,33 @@ function totalwf() {
         stringToNum(document.form1.ans100.value);
         var goukei= document.getElementById('goukei');
         goukei.insertAdjacentHTML("beforeend","(L)");
+                var pet_m =
+                stringToNum(document.form1.ans1.value) +
+                stringToNum(document.form1.ans2.value) +
+                stringToNum(document.form1.ans3.value) +
+                stringToNum(document.form1.ans4.value) +
+                stringToNum(document.form1.ans5.value) +
+                stringToNum(document.form1.ans6.value) +
+                stringToNum(document.form1.ans7.value) +
+                stringToNum(document.form1.ans100.value);
+                var pet = pet_m /2;
+                var pet = Math.round(pet)
+                document.getElementById('pet').textContent = (pet)
+             var pet =  document.getElementById('pet');
+                pet.insertAdjacentHTML("beforeend","(本)");
+                var bath_m =
+                stringToNum(document.form1.ans1.value) +
+                stringToNum(document.form1.ans2.value) +
+                stringToNum(document.form1.ans3.value) +
+                stringToNum(document.form1.ans4.value) +
+                stringToNum(document.form1.ans5.value) +
+                stringToNum(document.form1.ans6.value) +
+                stringToNum(document.form1.ans7.value) +
+                stringToNum(document.form1.ans100.value);
+                var bath = bath_m /200;
+                var bath = Math.round(bath)
+                document.getElementById('bath').textContent = (bath)
+             var bath =  document.getElementById('bath');
+                bath.insertAdjacentHTML("beforeend","(杯)");
+	}
 }
