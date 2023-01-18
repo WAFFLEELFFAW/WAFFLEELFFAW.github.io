@@ -59,5 +59,5 @@ function totalwf() {
                 document.getElementById('bath').textContent = (bath)
              var bath =  document.getElementById('bath');
                 bath.insertAdjacentHTML("beforeend","(杯)");
-	}
 }
+
