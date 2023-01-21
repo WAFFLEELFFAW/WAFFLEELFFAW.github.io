@@ -14,6 +14,14 @@ function calc4() { total = 0; total = 66 * stringToNum(document.form1.hinmoku4.v
 function calc5() { total = 0; total = 22926 * stringToNum(document.form1.hinmoku5.value) / 1000; document.form1.ans5.value = total; }
 function calc6() { total = 0; total = 13637 * stringToNum(document.form1.hinmoku6.value) / 1000; document.form1.ans6.value = total; }
 function calc7() { total = 0; total = 108 * stringToNum(document.form1.hinmoku7.value) / 1000; document.form1.ans7.value = total; }
+function calc8() { total = 0; total = 108 * stringToNum(document.form1.hinmoku8.value) / 1000; document.form1.ans8.value = total; }
+function calc9() { total = 0; total = 108 * stringToNum(document.form1.hinmoku9.value) / 1000; document.form1.ans9.value = total; }
+function calc10() { total = 0; total = 108 * stringToNum(document.form1.hinmoku10.value) / 1000; document.form1.ans10.value = total; }
+function calc11() { total = 0; total = 108 * stringToNum(document.form1.hinmoku11.value) / 1000; document.form1.ans11.value = total; }
+function calc12() { total = 0; total = 108 * stringToNum(document.form1.hinmoku12.value) / 1000; document.form1.ans12.value = total; }
+function calc13() { total = 0; total = 108 * stringToNum(document.form1.hinmoku13.value) / 1000; document.form1.ans13.value = total; }
+function calc14() { total = 0; total = 108 * stringToNum(document.form1.hinmoku14.value) / 1000; document.form1.ans14.value = total; }
+function calc15() { total = 0; total = 108 * stringToNum(document.form1.hinmoku15.value) / 1000; document.form1.ans15.value = total; }
 
 
 function calc100() { total = 0; total = 7046 * document.form1.hinmoku100.value / 1000; document.form1.ans100.value = total; }
@@ -28,6 +36,14 @@ function totalwf() {
         stringToNum(document.form1.ans5.value) +
         stringToNum(document.form1.ans6.value) +
         stringToNum(document.form1.ans7.value) +
+        stringToNum(document.form1.ans8.value) +
+        stringToNum(document.form1.ans9.value) +
+        stringToNum(document.form1.ans10.value) +
+        stringToNum(document.form1.ans11.value) +
+        stringToNum(document.form1.ans12.value) +
+        stringToNum(document.form1.ans13.value) +
+        stringToNum(document.form1.ans14.value) +
+        stringToNum(document.form1.ans15.value) +
         stringToNum(document.form1.ans100.value);
         var goukei= document.getElementById('goukei');
         goukei.insertAdjacentHTML("beforeend","(L)");
@@ -39,6 +55,14 @@ function totalwf() {
                 stringToNum(document.form1.ans5.value) +
                 stringToNum(document.form1.ans6.value) +
                 stringToNum(document.form1.ans7.value) +
+                stringToNum(document.form1.ans8.value) +
+                stringToNum(document.form1.ans9.value) +
+                stringToNum(document.form1.ans10.value) +
+                stringToNum(document.form1.ans11.value) +
+                stringToNum(document.form1.ans12.value) +
+                stringToNum(document.form1.ans13.value) +
+                stringToNum(document.form1.ans14.value) +
+                stringToNum(document.form1.ans15.value) +                
                 stringToNum(document.form1.ans100.value);
                 var pet = pet_m /2;
                 var pet = Math.round(pet)
@@ -53,6 +77,14 @@ function totalwf() {
                 stringToNum(document.form1.ans5.value) +
                 stringToNum(document.form1.ans6.value) +
                 stringToNum(document.form1.ans7.value) +
+                stringToNum(document.form1.ans8.value) +
+                stringToNum(document.form1.ans9.value) +
+                stringToNum(document.form1.ans10.value) +
+                stringToNum(document.form1.ans11.value) +
+                stringToNum(document.form1.ans12.value) +
+                stringToNum(document.form1.ans13.value) +
+                stringToNum(document.form1.ans14.value) +
+                stringToNum(document.form1.ans15.value) +
                 stringToNum(document.form1.ans100.value);
                 var bath = bath_m /200;
                 var bath = Math.round(bath)
