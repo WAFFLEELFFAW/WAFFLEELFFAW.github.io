@@ -126,17 +126,17 @@
                     <form name="form1" id="form1" action="/hghg/">
                         <div>
                             <table summary="バーチャルウォーター量自動計算" class="common_table">
-                                <col width="100" >
-                                <col width="300" >
-                                <col width="70" >
-                                <col width="50" >
-                                <col width="70" >
-                                <col width="70" >
-                                <col width="50" >
+                                <col width="100" />
+                                <col width="300" />
+                                <col width="70" />
+                                <col width="50" />
+                                <col width="70" />
+                                <col width="70" />
+                                <col width="50" />
                                 <tr>
                                     <th>大分類</th>
                                     <th>小分類</th>
-                                    <th>WF基準値<br />（m&sup3;/t）</th>
+                                    <th>VW基準値<br />（m&sup3;/t）</th>
                                     <th>生地の割合を入れて下さい</th>
                                     <th>単位</th>
                                     <th>単位あたり<br />の重量 (g)</th>
@@ -149,134 +149,102 @@
                                     <td>&nbsp;</td>
                                     <td>コットン（綿）</td>
                                     <td>9,968</td>
-                                    <td class="text-form">
-                                        <input name="hinmoku1" class="texttoreft" type="text" onkeyup="calc1()"
-                                            onmouseup="calc1()" placeholder="0" maxlength="10" tabindex="5"
-                                            title="コットン（綿）の量">
-                                    </td>
+                                    <td><input name="hinmoku1" type="text" onkeyup="calc1()"onmouseup="calc1()" value="0" maxlength="10" tabindex="5"title="コットン（綿）の量" ></td>
                                     <td>％</td>
                                     <td>-</td>
-                                    <td class="text-form">
-                                        <input name="ans1" class="texttoreft" type="text" value="0" tabindex="5"
-                                            title="コットン（綿）のWF量" readonly>
-                                    </td>
+                                    <td><input name="ans1" type="text"  value="0" tabindex="5"
+                                            title="コットン（綿）のWF量"></td>
                                 </tr>
                                 <tr>
                                     <td>&nbsp;</td>
                                     <td>羊毛</td>
                                     <td>3,065</td>
-                                    <td class="text-form">
-                                        <input name="hinmoku2" class="texttoreft" type="text" onkeyup="calc2()"
-                                            onmouseup="calc2()" placeholder="0" maxlength="10" tabindex="5"
-                                            title="羊毛の量">
+                                    <td><input name="hinmoku2" type="text"  onkeyup="calc2()"
+                                            onmouseup="calc2()" value="0" maxlength="10" tabindex="5" title="羊毛の量" >
                                     </td>
                                     <td>％</td>
                                     <td>-</td>
-                                    <td class="text-form">
-                                        <input name="ans2" class="texttoreft" type="text" value="0" tabindex="5"
-                                            title="羊毛のWF量" readonly>
+                                    <td><input name="ans2" type="text"  value="0" tabindex="5"
+                                            title="羊毛のWF量">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>&nbsp;</td>
                                     <td>絹</td>
                                     <td>5,929</td>
-                                    <td class="text-form">
-                                        <input name="hinmoku3" class="texttoreft" type="text" onkeyup="calc3()"
-                                            onmouseup="calc3()" placeholder="0" maxlength="10" tabindex="5"
-                                            title="絹の量">
+                                    <td><input name="hinmoku3" type="text"  onkeyup="calc3()"
+                                            onmouseup="calc3()" value="0" maxlength="10" tabindex="5" title="絹の量">
                                     </td>
                                     <td>％</td>
                                     <td>-</td>
-                                    <td class="text-form">
-                                        <input name="ans3" class="texttoreft" type="text" value="0" tabindex="5"
-                                            title="絹のWF量" readonly>
+                                    <td><input name="ans3" type="text"  value="0" tabindex="5" title="絹のWF量">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>&nbsp;</td>
                                     <td>人造・合成繊維</td>
                                     <td>47</td>
-                                    <td class="text-form">
-                                        <input name="hinmoku4" class="texttoreft" type="text" onkeyup="calc4()"
-                                            onmouseup="calc4()" placeholder="0" maxlength="10" tabindex="5"
-                                            title="人造・合成繊維の量">
-                                    </td>
+                                    <td><input name="hinmoku4" type="text"  onkeyup="calc4()"
+                                            onmouseup="calc4()" value="0" maxlength="10" tabindex="5"
+                                            title="人造・合成繊維の量"></td>
                                     <td>％</td>
                                     <td>-</td>
-                                    <td class="text-form">
-                                        <input name="ans4" class="texttoreft" type="text" value="0" tabindex="5"
-                                            title="人造・合成繊維のWF量" readonly>
-                                    </td>
+                                    <td><input name="ans4" type="text"  value="0" tabindex="5"
+                                            title="人造・合成繊維のWF量"></td>
                                 </tr>
                                 <tr>
-                                   <td class="back2"></td> <td colspan="7" class="em">Tシャツ（長袖，230g）</td>
+                                    <td class="back2"></td><td colspan="7" class="em">Tシャツ（長袖，230g）</td>
                                 </tr>
                                 <tr>
                                     <td>&nbsp;</td>
                                     <td>コットン（綿）</td>
                                     <td>9,968</td>
-                                    <td class="text-form">
-                                        <input name="hinmoku5" class="texttoreft" type="text" onkeyup="calc5()"
-                                            onmouseup="calc5()" placeholder="0" maxlength="10" tabindex="5"
-                                            title="コットン（綿）の量">
-                                    </td>
+                                    <td><input name="hinmoku5" type="text"  onkeyup="calc5()"
+                                            onmouseup="calc5()" value="0" maxlength="10" tabindex="5"
+                                            title="コットン（綿）の量"></td>
                                     <td>％</td>
                                     <td>-</td>
-                                    <td class="text-form">
-                                        <input name="ans5" class="texttoreft" type="text" value="0" tabindex="5"
-                                            title="コットン（綿）のWF量" readonly>
-                                    </td>
+                                    <td><input name="ans5" type="text"  value="0" tabindex="5"
+                                            title="コットン（綿）のWF量"></td>
                                 </tr>
                                 <tr>
                                     <td>&nbsp;</td>
                                     <td>羊毛</td>
                                     <td>3,065</td>
-                                    <td class="text-form">
-                                        <input name="hinmoku100" class="texttoreft" type="text" onkeyup="calc100()"
-                                            onmouseup="calc100()" placeholder="0" maxlength="10" tabindex="5"
-                                            title="羊毛の量">
+                                    <td><input name="hinmoku100" type="text"  onkeyup="calc100()"
+                                            onmouseup="calc100()" value="0" maxlength="10" tabindex="5" title="羊毛の量">
                                     </td>
                                     <td>％</td>
                                     <td>-</td>
-                                    <td class="text-form">
-                                        <input name="ans100" class="texttoreft" type="text" value="0" tabindex="5"
-                                            title="羊毛のWF量" readonly>
+                                    <td><input name="ans100" type="text"  value="0" tabindex="5"
+                                            title="羊毛のWF量">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>&nbsp;</td>
                                     <td>絹</td>
                                     <td>5,929</td>
-                                    <td class="text-form">
-                                        <input name="hinmoku6" class="texttoreft" type="text" onkeyup="calc6()"
-                                            onmouseup="calc6()" placeholder="0" maxlength="10" tabindex="5"
-                                            title="絹の量">
+                                    <td><input name="hinmoku6" type="text"  onkeyup="calc6()"
+                                            onmouseup="calc6()" value="0" maxlength="10" tabindex="5" title="絹の量">
                                     </td>
                                     <td>％</td>
                                     <td>-</td>
-                                    <td class="text-form">
-                                        <input name="ans6" class="texttoreft" type="text" value="0" tabindex="5"
-                                            title="絹のWF量" readonly>
+                                    <td><input name="ans6" type="text"  value="0" tabindex="5" title="絹のWF量">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>&nbsp;</td>
                                     <td>人造・合成繊維</td>
                                     <td>47</td>
-                                    <td class="text-form">
-                                        <input name="hinmoku7" class="texttoreft" type="text" onkeyup="calc7()"
-                                            onmouseup="calc7()" placeholder="0" maxlength="10" tabindex="5"
-                                            title="人造・合成繊維の量">
-                                    </td>
+                                    <td><input name="hinmoku7" type="text"  onkeyup="calc7()"
+                                            onmouseup="calc7()" value="0" maxlength="10" tabindex="5"
+                                            title="人造・合成繊維の量"></td>
                                     <td>％</td>
                                     <td>ｰ</td>
-                                    <td class="text-form">
-                                        <input name="ans7" class="texttoreft" type="text" value="0" tabindex="5"
-                                            title="人造・合成繊維のWF量" readonly>
-                                    </td>
+                                    <td><input name="ans7" type="text"  value="0" tabindex="5"
+                                            title="人造・合成繊維のWF量"></td>
                                 </tr>
-				 <td class="back5"></td><td colspan="7" class="em">長ズボン（長袖，230g）</td>
+		 <td class="back5"></td><td colspan="7" class="em">長ズボン（長袖，230g）</td>
                                 </tr>
                                 <tr>
                                     <td>&nbsp;</td>
@@ -327,7 +295,8 @@
                                     <td><input name="ans11" type="text"  value="0" tabindex="5"
                                             title="人造・合成繊維のWF量"></td>
                                 </tr>
-				 <td class="back6"></td><td colspan="7" class="em">スカート（230g）</td>
+
+		 <td class="back6"></td><td colspan="7" class="em">スカート（230g）</td>
                                 </tr>
                                 <tr>
                                     <td>&nbsp;</td>
@@ -378,6 +347,7 @@
                                     <td><input name="ans15" type="text"  value="0" tabindex="5"
                                             title="人造・合成繊維のWF量"></td>
                                 </tr>
+
                             </table>
 
                             <p><input type="reset" class="skel2" value="すべて０に戻す" tabindex="5" title="リセット"></p>
