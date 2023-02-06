@@ -6,6 +6,7 @@ const waterCoefficient =
         8301,
         66,
         22926,
+        7050,
         13637,
         108,
         62798,
@@ -36,11 +37,8 @@ function stringToNum(x) {
 
 function calctest(numString) {
     const num = Number(numString.substr(7));
-    console.log(numString, num, document.form1["ans" + num].value);
     document.form1["ans" + num].value = waterCoefficient[num - 1] * stringToNum(document.form1["hinmoku" + num].value) / 1000;
 }
-
-function calc100() { let total = 0; total = 7050 * document.form1.hinmoku100.value / 1000; document.form1.ans100.value = total; }
 
 
 function totalwf() {
