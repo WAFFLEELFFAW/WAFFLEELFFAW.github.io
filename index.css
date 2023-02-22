@@ -1,0 +1,108 @@
+@charset "utf-8";
+#content #main .common_table {
+    width: 100%;
+    margin: 0 0 15px;
+}
+
+#content #main .common_table th {
+    font-size: 1.2em;
+    line-height: 1;
+    padding: 5px 5px;
+    text-align: center;
+    background: #def6ff;
+    white-space: nowrap
+}
+
+#content #main .common_table td {
+    font-size: 1.2em;
+    line-height: 1;
+    padding: 3px;
+}
+
+#content #main .common_table td.em {
+    font-weight: bold;
+    color: #004ecc;
+    padding-top: 10px;
+    border-bottom: 1px dotted #666666;
+}
+
+#content #main .common_table .aki {
+    margin: 5px;
+}
+
+.texttoreft {
+    text-align: right;
+}
+
+.text-form {
+    text-align: right;
+}
+
+h1 {
+    padding: 0.5em 0;
+    border-top: solid 3px blue;
+    border-bottom: solid 3px blue;
+}
+
+.skel {
+    width: 50%;
+    min-width: 200px;
+    max-width: 150px;
+    padding: 10px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    border: 3px solid #68779a;
+    background: #cbe8fa;
+    cursor: pointer;
+}
+
+.skel2 {
+    width: 50%;
+    min-width: 150px;
+    max-width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid #68779a;
+    background: #005db7;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.flex {
+    display: flex;
+}
+
+.back {
+    background: url(https://icon-pit.com/wp-content/uploads/2020/01/v-neck_shirt_5926-300x300.png) no-repeat 10px center / 50px auto;
+    padding: 40px 40px 40px 40px;
+}
+
+.back2 {
+    background: url(https://icon-pit.com/wp-content/uploads/2020/01/v-neck_shirt_nagasode_6006-300x300.png) no-repeat 10px center / 50px auto;
+    padding: 40px 40px 40px 40px;
+}
+
+.back3 {
+    background: url(https://icon-pit.com/wp-content/uploads/2020/03/pet-bottles_9816-110x110.png) no-repeat 10px center / 40px auto;
+    padding: 20px 20px 20px 20px;
+}
+
+.back4 {
+    background: url(https://icon-pit.com/wp-content/uploads/2020/09/bath_12352-110x110.png) no-repeat 10px center / 50px auto;
+    padding: 20px 20px 20px 20px;
+}
+
+.back5 {
+    background: url(https://icooon-mono.com/i/icon_13388/icon_133881_64.png) no-repeat 10px center / 35px auto;
+    padding: 20px 20px 20px 20px;
+}
+
+.back6 {
+    background: url(https://icooon-mono.com/i/icon_13435/icon_134351_64.png) no-repeat 10px center / 35px auto;
+    padding: 20px 20px 20px 20px;
+}
+
+body {
+    background-image: url("https://www.pakutaso.com/shared/img/thumb/WPIMGL2420.jpg")
+}
