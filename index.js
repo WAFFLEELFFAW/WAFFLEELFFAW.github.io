@@ -58,7 +58,7 @@ function totalwf() {
         stringToNum(document.form1.ans13.value) +
         stringToNum(document.form1.ans14.value) +
         stringToNum(document.form1.ans15.value) +
-        stringToNum(document.form1.ans100.value);
+        stringToNum(document.form1.ans16.value);
 
     //合計
     document.getElementById('goukei').textContent = m;
