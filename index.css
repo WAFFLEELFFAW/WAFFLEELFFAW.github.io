@@ -121,4 +121,8 @@ h1 {
         width: 7em;
         height: 2em;
     }
+
+    .sm_hide{
+        display: none;
+    }
 }
